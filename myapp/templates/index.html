@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <center>
+        <h1>Employee Form</h1>
+        <hr/>
+        <a href="{% url 'empinsert'%}">Add Employee Record</a>
+        <table border="1">
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Employee Address</th>
+                <th>Employee Gender</th>
+                <th>Employee Phone Number</th>
+                
+            </tr>
+            {% for displayemp in myapp%}
+            <tr>
+                <td>{{displayemp.eid}}</td>
+                <td>{{displayemp.ename}}</td>
+                <td>{{displayemp.eaddress}}</td>
+                <td>{{displayemp.egender}}</td>
+                <td>{{displayemp.ephoneno}}</td>
+                <td><a href="/edit/{{displayemp.eid}}"> edit </a></td>
+                <td><a href="/delete/{{displayemp.eid}}" onclick="return confirm('Are you sure you want to delete?')"> delete </a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+</body>
+</html>

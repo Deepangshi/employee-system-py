@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>Edit & Update Page</title>
+</head>
+<body>
+    <center>
+        <h1>Edit & Update Employee Record</h1>
+        <h2>Employee Id {{myapp.id}}</h2>
+        <hr>
+        <form method="POST" action="/update/{{myapp.id}}">
+            {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>Employee Name</td>
+                <td><Input type="text" name="ename" value="{{myapp.ename}}"></td>
+            </tr>
+            <tr>
+                <td>Employee Address</td>
+                <td><Input type="text" name="eaddress" value="{{myapp.eaddress}}"></td>
+            </tr>
+            <tr>
+                <td>Employee Gender</td>
+                <td><Input type="text" name="egender" value="{{myapp.egender}}"></td>
+            </tr>
+            <tr>
+                <td>Employee Phone No</td>
+                <td><Input type="text" name="ephoneno" value="{{myapp.ephoneno}}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Update Employee Record">
+        <a href="{% url 'empdisplay'%}">Home Page</a>
+        <hr/>
+        {% if messages %}
+        {% for resut in messages%}
+        {{result}}
+        {% endfor %}
+        {% endif %}
+    </form>
+    </center>
+</body>
+</html>

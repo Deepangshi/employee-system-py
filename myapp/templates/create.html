@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>Create Record</title>
+</head>
+<body>
+    <center>
+        <h2>Employee Record</h2>
+        <hr/>
+        <form method="POST">
+            {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>Employee Id</td>
+                <td><input type="text" placeholder="Employee Id" name="eid"</td>
+            </tr>
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" placeholder="Employee Name" name="ename"</td>
+            </tr>
+            <tr>
+                <td>Employee Address</td>
+                <td><input type="text" placeholder="Employee Address" name="eaddress"</td>
+            </tr>
+            <tr>
+                <td>Employee Gender</td>
+                <td><input type="radio" value="Male" name="egender" group="egender"> Male
+                    <input type="radio" value="Female" name="egender" group="egender"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Employee Phone Number</td>
+                <td><input type="text" placeholder="Employee Phone Number" name="ephoneno"</td>
+            </tr>
+        </table>
+        <input type="submit" value="Insert record"/>
+        <a href="{% url 'empdisplay' %}">Home Page</a>
+        <hr/>
+        {% if messages %}
+        {% for result in messages%}
+        <b style="color: blue;">{{result}}</b>
+        {% endfor %}
+        {% endif %}
+    </form>
+    </center>
+</body>
+</html>

@@ -2,19 +2,42 @@
 Employee Data Collection System is CRUD application.
 
 ## Tools Used
+if you're using server technology windows
+
 Code Editor- [Visual Studio Code](https://code.visualstudio.com/)
 
-Programming Language- [Python](https://www.python.org/)
+``
+install python
+``
 
-Framework- [Django](https://www.djangoproject.com/)
+``
+virtualenv .
+`` 
 
-db- [sqlite3](https://docs.python.org/3/library/sqlite3.html)
+Framework setup- 
 
-should be run in local host: http://127.0.0.1:8000/
+``
+python3 -m pip install django
+``
 
-admin login as Django Administrator 
+db- 
 
-## Employee Login Page
+``
+pip install db-sqlite3
+``
+
+Open Employee System File-
+
+``
+python manage.py runserver
+``
+
+## Result 
+
+Functionality is hosted at: http://127.0.0.1:8000/
+
+
+### ScreenShots
 
 <img align ="left " width="300" src="https://github.com/Deepangshi/CRUDEMP1/blob/main/empdata/firsta.png" />
 
